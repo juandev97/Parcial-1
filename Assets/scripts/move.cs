@@ -107,6 +107,13 @@ public class move : MonoBehaviour
             timeText.text = time.ToString();
             timeText.enabled = false;
         }
+        
+        
+        var gos : GameObject[];
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        if(gos.length == 0){
+            SceneManager.LoadScene("win");
+        }
     }
 
 

@@ -20,8 +20,8 @@ public class move : MonoBehaviour
 
     public GameObject punch;
 
-    public float maxTime = 10f;
-    public float time;
+    public int maxTime = 100;
+    public int time;
 
     public Text timeText;
 
@@ -85,7 +85,7 @@ public class move : MonoBehaviour
 
         // contador cuando esta parado 
 
-        // fijamos el valor del contador = al tiempo actual (es necesario pasarlo de float a string)
+        // fijamos el valor del contador = al tiempo actual (es necesario pasarlo de int a string)
         auxText= time.ToString();
         timeText.text = auxText;
 
@@ -95,16 +95,16 @@ public class move : MonoBehaviour
             timeText.enabled = true;
 
             // y se resta el tiempo
-            time -= Time.deltaTime;
+            time -= (int) Time.deltaTime;
 
             if(time <= 0){
                 // si se acaba el tiempo se carga la pantalla gameover
                 SceneManager.LoadScene("gameover");
             }
         }else {
-            // si el personaje se mueve el contador para y se resetea 
-            time = maxTime;
-            timeText.text = maxTime.ToString();
+            // si el personaje se mueve el contador para
+            //time = maxTime;
+            timeText.text = time.ToString();
             timeText.enabled = false;
         }
     }

@@ -9,6 +9,8 @@ public class move : MonoBehaviour
 
 // los personajes necesitan una propiedad controller
 
+     public GameObject[] gos;
+     
     // y una velocidad base y un salto 
     public float movimiento;
     public float rotacion;
@@ -109,9 +111,9 @@ public class move : MonoBehaviour
         }
         
         
-        var gos : GameObject[];
+       
         gos = GameObject.FindGameObjectsWithTag("Enemy");
-        if(gos.length == 0){
+        if(gos.Length == 0){
             SceneManager.LoadScene("win");
         }
     }

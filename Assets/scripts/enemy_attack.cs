@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManager;
 
 public class enemy_attack : MonoBehaviour
 {
@@ -21,6 +22,7 @@ private void OnTriggerEnter(Collider other) {
         // si la capsula toca al perosnaje 
         // aparece este mensaje
         Debug.Log("aaah");
+        SceneManager.LoadScene("gameover");
     }
 }
 
